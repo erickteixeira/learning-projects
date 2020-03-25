@@ -57,9 +57,8 @@ if validacao == True:
         print("{}".format(resultado))
     elif int(escolha) == 5:
         n1 = float(input("informe o valor do numero: "))
-        resultado = divisao(n1,n2)
+        resultado = raizquadrada(n1)
         print("{}".format(resultado))
-    elif
     else:
         n1 = float(input("informe o valor do primeiro numero: "))
         n2 = float(input("informe o valor do segundo numero: "))
