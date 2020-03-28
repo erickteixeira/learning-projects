@@ -1,0 +1,412 @@
+/* ************************************************************************ *
+*    tabelas verdade, v0.1.17092.1833                                      *
+*    tabelas verdade sobre implicações e equivalências tautológicas        *
+*                                                                          *
+*    Copyright (C) 2017 by Erick Antunes Teixeira                          *
+*                                                                          *
+*    This program is free software; you can redistribute it and/or modify  *
+*    it under the terms of the GNU General Public License as published by  *
+*    the Free Software Foundation; either version 2 of the License, or     *
+*    (at your option) any later version.                                   *
+*                                                                          *
+*    This program is distributed in the hope that it will be useful,       *
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+*    GNU General Public License for more details.                          *
+*                                                                          *
+*    You should have received a copy of the GNU General Public License     *
+*    along with this program; if not, write to the                         *
+*    Free Software Foundation, Inc.,                                       *
+*    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+*                                                                          *
+*    To contact the author, please write to:                               *
+*    Erick Antunes Teixeira <erickantunest@gmail.com>                      *
+*    Webpage: www.upe.br                                                   *
+*    Phone: +55 (98) 98190-4079                                            *
+* ************************************************************************ *
+* 
+*/
+
+/* Implicações tautológicas*/
+
+1.Modus ponems 
+            a        b      
+| p | q |  p->q  |  p^a   |  b->q  |
+| v | v |   v    |   v    |   v    |
+| v | f |   f    |   f    |   v    |
+| f | v |   v    |   f    |   v    |
+| f | f |   v    |   f    |   v    |
+
+conclusão: b->q é uma tautologia, portanto ela tambem é uma implicação tautologica.
+
+2.Modus tollens
+            a        b        c        d 
+| p | q |  ~p    |  ~q    |  p->q  |  b^c   |  d->a  |
+| v | v |   f    |   f    |   v    |   f    |   v    |
+| f | v |   v    |   f    |   v    |   f    |   v    |
+| v | f |   f    |   v    |   f    |   f    |   v    |
+| f | f |   v    |   v    |   v    |   v    |   v    |
+
+conclusão:d->a é uma tautologia, portanto ela tambem é uma implicação tautologica.
+
+3.Silogismo hipotetico
+                 a       b       c        d 
+| p | q | r |  p->q |  q->r  |  p->r  |  a^b   |  d->c |
+| v | v | v |   v   |   v    |   v    |   v    |   v   |
+| v | v | f |   v   |   f    |   f    |   f    |   v   |
+| v | f | v |   f   |   v    |   v    |   f    |   v   |
+| v | f | f |   f   |   v    |   f    |   f    |   v   |
+| f | v | v |   v   |   v    |   v    |   v    |   v   |
+| f | v | f |   v   |   f    |   v    |   f    |   v   |
+| f | f | v |   v   |   v    |   v    |   v    |   v   |
+| f | f | f |   v   |   v    |   v    |   v    |   v   |
+
+conclusão:c->d  é uma tautologia, portanto ela tambem é uma implicação tautologica.
+
+4.Silogismo disjuntivo
+            a         b       c
+| p | q |  ~p    |  p v q |  b^a   |  c->q  |
+| v | v |   f    |   v    |  f     |   v    |
+| v | f |   f    |   v    |  f     |   v    |
+| f | v |   v    |   v    |  v     |   v    |
+| f | f |   v    |   f    |  f     |   v    |
+
+conclusão:c->q  é uma tautologia, portanto ela tambem é uma implicação tautologica.
+
+5.Simplificação 
+            a       
+| p | q |  p^q   |  a->p  |        
+| v | v |   v    |   v    |        
+| v | f |   f    |   v    |        
+| f | v |   f    |   v    |        
+| f | f |   f    |   v    |
+
+conclusão:a->p  é uma tautologia, portanto ela tambem é uma implicação tautologica.
+
+6.Adição
+             a
+| p | q |  p v q |  p->a  |     
+| v | v |    v   |   v    |        
+| v | f |    v   |   v    |        
+| f | v |    v   |   v    |        
+| f | f |    f   |   v    |        
+
+conclusão:p->a  é uma tautologia, portanto ela tambem é uma implicação tautologica.
+
+7.Eliminação
+                a        b        c        d        e
+| p | q | r |  ~q    |  q v r |   p->b |  c^a   |  p->r |  d->e | 
+| v | v | v |   f    |   v    |   v    |   f    |   v   |   v   |
+| v | v | f |   f    |   v    |   v    |   f    |   f   |   v   |
+| v | f | v |   v    |   v    |   v    |   v    |   v   |   v   |
+| v | f | f |   v    |   f    |   f    |   f    |   f   |   v   |
+| f | v | v |   f    |   v    |   v    |   f    |   v   |   v   |
+| f | v | f |   f    |   v    |   v    |   f    |   v   |   v   |
+| f | f | v |   v    |   v    |   v    |   v    |   v   |   v   |
+| f | f | f |   v    |   f    |   v    |   v    |   v   |   v   |
+
+conclusão:d->e  é uma tautologia, portanto ela tambem é uma implicação tautologica.
+
+8.Prova por caos
+                a       b        c        d         e
+| p | q | r |  p->r |  q->r  |  a^b   |  p v q |  d->r  |  c->e  |
+| v | v | v |  v    |   v    |  v     |  v     |  v     |  v     |
+| v | v | f |  f    |   f    |  f     |  v     |  f     |  v     |
+| v | f | v |  v    |   v    |  v     |  v     |  v     |  v     |
+| v | f | f |  f    |   v    |  f     |  v     |  f     |  v     |
+| f | v | v |  v    |   v    |  v     |  v     |  v     |  v     |
+| f | v | f |  v    |   f    |  f     |  v     |  f     |  v     |
+| f | f | v |  v    |   v    |  v     |  f     |  v     |  v     |
+| f | f | f |  v    |   v    |  v     |  f     |  v     |  v     |
+
+conclusão:c->e  é uma tautologia, portanto ela tambem é uma implicação tautologica.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+/*Equivalência tautológica*/
+
+1.Comutativa
+            a        b           
+| p | q |  p^q   |  q^p   |  a<->b |
+| v | v |   v    |  v     |  v     |
+| v | f |   f    |  f     |  v     |
+| f | v |   f    |  f     |  v     |
+| f | f |   f    |  f     |  v     |
+
+             a        b
+| p | q |  p v q |  q v p |  a<->b |
+| v | v |  v     |   v    |  v     |
+| v | f |  v     |   v    |  v     |
+| f | v |  v     |   v    |  v     |
+| f | f |  f     |   f    |  v     |
+
+conclusão:como a<->b é uma tautologia temos que a<=>b.
+
+2.Associativa
+                a        b        c       d
+| p | q | r |  p^q  |  a^r   |  q^r   |  p^c   |  b<->d |
+| v | v | v |  v    |  v     |  v     |  v     |  v     |
+| v | v | f |  v    |  f     |  f     |  f     |  v     |
+| v | f | v |  f    |  f     |  f     |  f     |  v     |
+| v | f | f |  f    |  f     |  f     |  f     |  v     |
+| f | v | v |  f    |  f     |  v     |  f     |  v     |
+| f | v | f |  f    |  f     |  f     |  f     |  v     |
+| f | f | v |  f    |  f     |  f     |  f     |  v     |
+| f | f | f |  f    |  f     |  f     |  f     |  v     |
+
+                a        b        c       d
+| p | q | r | p v q |  a v r |  q v r |  p v c |  b<->d |
+| v | v | v |  v    |  v     |  v     |   v    |  v     |
+| v | v | f |  v    |  v     |  v     |   v    |  v     |
+| v | f | v |  v    |  v     |  v     |   v    |  v     |
+| v | f | f |  v    |  v     |  f     |   v    |  v     |
+| f | v | v |  v    |  v     |  v     |   v    |  v     |
+| f | v | f |  v    |  v     |  v     |   v    |  v     |
+| f | f | v |  f    |  v     |  v     |   v    |  v     |
+| f | f | f |  f    |  f     |  f     |   f    |  v     |
+
+conclusão:como b<->d é uma tautologia temos que b<=>d.
+
+3.idempotente
+            a        
+| p | p |  p^p   |  a<->p |   
+| v | v |  v     |  v     |        
+| v | v |  v     |  v     |        
+| f | f |  f     |  v     |        
+| f | f |  f     |  v     |        
+
+            a
+| p | p |  p v p |  a<->p |        
+| v | v |  v     |  v     |        
+| v | v |  v     |  v     |        
+| f | f |  f     |  v     |        
+| f | f |  f     |  v     |       
+
+conclusão:como a<->p é uma tautologia temos que a<=>p.
+
+4.Absorção
+             a       b        
+| p | r |  p v r |  p^a   |  b<->p |
+| v | v |  v     |  v     |  v     |
+| v | f |  v     |  v     |  v     |
+| f | v |  v     |  f     |  v     |
+| f | f |  f     |  f     |  v     |
+
+             a       b
+| p | r |  p^r   |  p v a |  b<->p |
+| v | v |  v     |  v     |  v     |
+| v | f |  f     |  v     |  v     |
+| f | v |  f     |  f     |  v     |
+| f | f |  f     |  f     |  v     |
+
+conclusão:como b<->p é uma tautologia temos que b<=>p.
+
+5.Disttributiva
+                a       b        c        d        e
+| p | q | r |  q v r|  p^a   |  p^q   |  p^r   |  c v d |  b<->e |
+| v | v | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| v | v | f |  v    |  v     |  v     |  f     |  v     |  v     |
+| v | f | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| v | f | f |  f    |  f     |  f     |  f     |  f     |  v     |
+| f | v | v |  v    |  f     |  f     |  f     |  f     |  v     |
+| f | v | f |  v    |  f     |  f     |  f     |  f     |  v     |
+| f | f | v |  v    |  f     |  f     |  f     |  f     |  v     |
+| f | f | f |  f    |  f     |  f     |  f     |  f     |  v     |
+
+               a        b        c        d         e
+| p | q | r |  q^r  |  p v a |  p v q |  p v r |  c^d   |  b<->e |
+| v | v | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| v | v | f |  f    |  v     |  v     |  v     |  v     |  v     |
+| v | f | v |  f    |  v     |  v     |  v     |  v     |  v     |
+| v | f | f |  f    |  v     |  v     |  v     |  v     |  v     |
+| f | v | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| f | v | f |  f    |  f     |  v     |  f     |  f     |  v     |
+| f | f | v |  f    |  f     |  f     |  v     |  f     |  v     |
+| f | f | f |  f    |  f     |  f     |  f     |  f     |  v     |
+
+               a        b        c         d        e
+| p | q | r |  q^r  |  p->a  |  p->q  |  p->r  |  c^d   |  b<->e |
+| v | v | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| v | v | f |  f    |  f     |  v     |  f     |  f     |  v     |
+| v | f | v |  f    |  f     |  f     |  v     |  f     |  v     |
+| v | f | f |  f    |  f     |  f     |  f     |  f     |  v     |
+| f | v | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| f | v | f |  f    |  v     |  v     |  v     |  v     |  v     |
+| f | f | v |  f    |  v     |  v     |  v     |  v     |  v     |
+| f | f | f |  f    |  v     |  v     |  v     |  v     |  v     |
+
+               a        b        c         d        e
+| p | q | r |  q v r|  p->a  |  p->q  |  p->r  | c v d  |  b<->e |
+| v | v | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| v | v | f |  v    |  v     |  v     |  f     |  v     |  v     |
+| v | f | v |  v    |  v     |  f     |  v     |  v     |  v     |
+| v | f | f |  f    |  f     |  f     |  f     |  f     |  v     |
+| f | v | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| f | v | f |  v    |  v     |  v     |  v     |  v     |  v     |
+| f | f | v |  v    |  v     |  v     |  v     |  v     |  v     |
+| f | f | f |  f    |  v     |  v     |  v     |  v     |  v     |
+
+conclusão:como b<->e é uma tautologia temos que b<=>e.
+
+6.Leis de D`morgan
+            a         b       c        d        e
+| p | q |  ~p    |  ~q    |  a v b |  p^q   |  ~d    |  e<->c|
+| v | v |  f     |  f     |  f     |  v     |  f     |  v    |
+| v | f |  f     |  v     |  v     |  f     |  v     |  v    |
+| f | v |  v     |  f     |  v     |  f     |  v     |  v    |
+| f | f |  v     |  v     |  v     |  f     |  v     |  v    |
+
+            a         b       c        d        e
+| p | q |  ~p    |  ~q    |  a^b   |  p v q |  ~d    |  e<->c|
+| v | v |  f     |  f     |  f     |  v     |  f     |  v    |
+| v | f |  f     |  v     |  f     |  v     |  f     |  v    |
+| f | v |  v     |  f     |  f     |  v     |  f     |  v    |
+| f | f |  v     |  v     |  v     |  f     |  v     |  v    |
+
+conclusão:como e<->c é uma tautologia temos que e<=>c.
+
+7.Def. implicação
+            a         b       c
+| p | q |  ~p    |  a v q |  p->q  |  c<->b |
+| v | v |  f     |  v     |  v     |  v     |
+| v | f |  f     |  f     |  f     |  v     |
+| f | v |  v     |  v     |  v     |  v     |
+| f | f |  v     |  v     |  v     |  v     |
+
+conclusão:como c<->b é uma tautologia temos que c<=>b.
+            a        b        c        d
+| p | q |  ~q    |  p^a   |  ~b    |  p->q  |  d<->c |
+| v | v |  f     |  f     |  v     |  v     |  v     |
+| v | f |  v     |  v     |  f     |  f     |  v     |
+| f | v |  f     |  f     |  v     |  v     |  v     |
+| f | f |  v     |  f     |  v     |  v     |  v     |
+
+conclusão:como d<->c é uma tautologia temos que d<=>c.
+
+8.Def. bicondicional
+            a        b        c        d
+| p | q |  p<->q |  p->q  |  q->p  |  b^c   |  a<->d |
+| v | v |  v     |  v     |  v     |  v     |  v     |
+| v | f |  f     |  f     |  v     |  f     |  v     |
+| f | v |  f     |  v     |  f     |  f     |  v     |
+| f | f |  v     |  v     |  v     |  v     |  v     |
+
+conclusão:como a<->d é uma tautologia temos que a<=>d.
+            a        b         c       d         e       f
+| p | q |  ~p    |  ~q    |  p<->q |  a v q |  b v p |  d^e   |  c<->f |
+| v | v |  f     |  f     |  v     |  v     |  v     |  v     |  v     |
+| v | f |  f     |  v     |  f     |  f     |  v     |  f     |  v     |
+| f | v |  v     |  f     |  f     |  v     |  f     |  f     |  v     |
+| f | f |  v     |  v     |  v     |  v     |  v     |  v     |  v     |
+
+conclusão:como c<->f é uma tautologia temos que c<=>f.
+
+9.Def. ou-exclusivo
+            a         b        c       d        e
+| p | q |  p+q   |  p v q |  p^q   |  ~c    |  b v d |
+| v | v |  f     |  v     |  v     |  f     |  v     |        
+| v | f |  v     |  v     |  f     |  v     |  v     |        
+| f | v |  v     |  v     |  f     |  v     |  v     |        
+| f | f |  f     |  f     |  f     |  v     |  v     |
+
+conclusão:como b<->d é uma tautologia temos que b<=>d.
+
+10.Negação
+        a         b
+| p |  ~p    |  ~a    |  b<->p |
+| v |  f     |  v     |  v     |
+| v |  f     |  v     |  v     |
+| f |  v     |  f     |  v     |
+| f |  v     |  f     |  v     |
+
+conclusão:como b<->p é uma tautologia temos que b<=>p.
+
+11.Contraposição
+            a        b        c         d
+| p | q |  ~p    |  ~q    |  b->a  |  p->q  |  d<->c |
+| v | v |  f     |  f     |  v     |  v     |  v     |
+| v | f |  f     |  v     |  f     |  f     |  v     |
+| f | v |  v     |  f     |  v     |  v     |  v     |
+| f | f |  v     |  v     |  v     |  v     |  v     |
+
+conclusão:como d<->c é uma tautologia temos que d<=>c.
+
+12.Exportação/Importação
+                a       b        c        d
+| p | q | r |  p^q  |  a->r  |  q->r  |  p->c  |  d<->b |
+| v | v | v |  v    |  v     |  v     |  v     |  v     |
+| v | v | f |  v    |  f     |  f     |  f     |  v     |
+| v | f | v |  f    |  v     |  v     |  v     |  v     |
+| v | f | f |  f    |  v     |  v     |  v     |  v     |
+| f | v | v |  f    |  v     |  v     |  v     |  v     |
+| f | v | f |  f    |  v     |  f     |  v     |  v     |
+| f | f | v |  f    |  v     |  v     |  v     |  v     |
+| f | f | f |  f    |  v     |  v     |  v     |  v     |
+
+conclusão:como d<->b é uma tautologia temos que d<=>b.
+
+13.Troca de premissas
+               a        b         c        d
+| p | q | r |  q->r |  p->a  |  p->r  |  q->c  |  b<->d |
+| v | v | v |  v    |  v     |  v     |  v     |  v     |
+| v | v | f |  f    |  f     |  f     |  f     |  v     |
+| v | f | v |  v    |  v     |  f     |  v     |  v     |
+| v | f | f |  v    |  v     |  f     |  v     |  v     |
+| f | v | v |  v    |  v     |  v     |  v     |  v     |
+| f | v | f |  f    |  v     |  v     |  v     |  v     |
+| f | f | v |  v    |  v     |  v     |  v     |  v     |
+| f | f | f |  v    |  v     |  v     |  v     |  v     |
+
+conclusão:como b<->d é uma tautologia temos que b<=>d.
+
+14.Propriedades de V
+            a
+| p | V |  p^V   |  a<->p |        
+| v | v |  v     |  v     |        
+| v | v |  v     |  v     |        
+| f | v |  f     |  v     |        
+| f | v |  f     |  v     |
+
+conclusão:como a<->p é uma tautologia temos que a<=>p.
+            a
+| p | v |  p v V |  a<->V |        
+| v | v |  v     |  v     |        
+| v | v |  v     |  v     |        
+| f | v |  v     |  v     |        
+| f | v |  v     |  v     |        
+
+conclusão:como a<->V é uma tautologia temos que a<=>V.
+            a         b
+| p | q |  ~p    |  p v a |  b<->V |
+| v | v |  f     |  v     |  v     |
+| v | f |  f     |  v     |  v     |
+| f | v |  v     |  v     |  v     |
+| f | f |  v     |  v     |  v     |
+
+conclusão:como b<->V é uma tautologia temos que b<=>V.
+
+15.Propriedades de F
+            a         b        
+| p | F |  p^F   |  a<->F |        
+| v | f |  f     |  v     |        
+| v | f |  f     |  v     |        
+| f | f |  f     |  v     |        
+| f | f |  f     |  v     |   
+
+conclusão:como a<->F é uma tautologia temos que a<=>F.
+            a         b
+| p | F |  p v F |  a<->p |        
+| v | f |  v     |  v     |        
+| v | f |  v     |  v     |        
+| f | f |  f     |  v     |        
+| f | f |  f     |  v     |        
+
+conclusão:como a<->p é uma tautologia temos que a<=>p.
+            a         b
+| p | f |  ~p    |  p^a   |  b<->f |
+| v | f |  f     |  f     |  v     |
+| v | f |  f     |  f     |  v     |
+| f | f |  v     |  f     |  v     |
+| f | f |  v     |  f     |  v     |
+
+conclusão:como b<->F é uma tautologia temos que b<=>F.
