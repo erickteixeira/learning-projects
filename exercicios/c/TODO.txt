@@ -1,0 +1,136 @@
+Tarefas:
+----------
+
+Abra uma conta no Dropbox se ainda não tiver
+https://db.tt/F66Mx1Ke
+
+Visite a página:
+
+http://tinyurl.com/hydrabox
+
+----------
+
+Leia o arquivo de boas vindas:
+
+01-mensagem-novos-bem-vindo.txt
+
+----------
+
+Leia o arquivo sobre segurança:
+
+02-mensagem-novos-seguranca.txt
+
+----------
+
+Leia o arquivo sobre senhas:
+
+06-mensagem-senha.txt
+
+----------
+
+Leia o resumo:
+
+08-mensagem-resumo.txt
+
+Em especial, as definições dos vários tipos de extensões de programas binários (executáveis)
+dependendo da sua fonte (C, PROLOG, BrainForce, Portugol, e combinações de bibliotecas compartilhadas)
+
+Estas extensões estão implementadas no makefile
+
+----------
+
+Crie as pastas das disciplinas que estiver matriculado (apenas).
+
+Letras minúsculas e sem acentos. (exemplos: ia, discreta, informatica, logica)
+
+Dentro de cada uma delas, crie mais duas pastas: rascunhos e trabalhos.
+(minúsculas, sem acentos, e no plural)
+
+Pesquise sobre o comando mkdir.
+
+Leia sobre os comandos na pasta:
+
+http://tinyurl.com/hydrabox
+
+03-mensagem-linux.txt
+
+----------
+
+Faça cópias do arquivo makefile para dentro das pastas: rascunhos e trabalhos.
+
+----------
+
+Leia seu finger. As notas podem ser editadas com o comando chfn (abreviação de "CHange Finger Notes").
+Se estiver com erro nas informações do seu finger, avise o seu professor imediatamente, por email.
+
+Caso encontre algum erro, atualize seu finger com os comandos, conforme o campo que esteja incorreto:
+
+Para email (campo originalmente usado para "room address")
+$ chfn -r "email@correto"
+
+Para seu usuário do Github (campo originalmente usado para "office phone")
+$ chfn -w "@usuariogithub"
+
+Para telefone (campo "home phone")
+$ chfn -h "(81) 98765-4321"
+
+Ou se preferir atualizar todos, use apenas
+$ chfn
+e tecle <ENTER> nos campos corretos (que não precisam ser alterados)
+ou o novo valor e <ENTER> nos incorretos.
+
+Veja mais detalhes no arquivo 03-mensagem-linux.txt da nuvem Dropbox (link para hydrabox acima).
+
+ATENÇÃO: Não altere as linhas do arquivo ~/.plan: 
+* Courses:
+* Github:
+Estas linhas são usadas por scripts que separam os alunos nas turmas corretamente, de forma automática.
+
+* Edite o arquivo: ~/.project
+
+Coloque lá os seus projetos e hobbies.
+
+As permissões para o arquivo .plan e .project foram liberadas. Todos os colegas, ao dar um "finger usuario" poderao ver o que voce compartilhou nestes arquivos. Coloque la no .project alguma coisa que mostre um pouco de vocẽ.
+
+----------
+
+Configure o site http://github.com/
+
+Veja seção 2a do arquivo 11-msg-git.txt e 13-msg-ssh.txt
+
+Nome, Email, chave SSH
+
+Arquivo: ~/.config/git/config
+
+----------
+
+Edite e coloque suas informações no arquivo de configurações do vi:
+
+Arquivo: ~/.vimrc
+
+----------
+
+Leia e siga o arquivo links.txt
+
+----------
+
+Leia e estude os arquivos:
+
+* ssh-putty.pdf
+* vi.pdf
+
+----------
+
+Apague este arquivo (TODO.txt) ao final, para indicar que completou a tarefa.
+(Este arquivo é parte dos exercícios e é avaliado. Portanto assim que acabar, apague este arquivo para indicar que cumpriu a tarefa)
+
+----------
+
+Bom estudo.
+Prof. Dr. Ruben Carlo Benante
+rcb@upe.br
+
+PS. Se ja cumpriu todas tarefas, jogue um Akernaak, que ninguem eh de ferro! :)
+
+PPS. Não esqueça de estudar continuamente com o qualcard. Faça seus próprios banco de dados para aprender pelo método de repetição diária.
+
