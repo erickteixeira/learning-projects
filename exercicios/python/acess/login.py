@@ -1,4 +1,35 @@
 from Person import Person
+from datetime import *
+
+# funcao principal para o programa
+def inicializacao(pergunta):
+    if(pergunta == "S" or pergunta == "s"):
+        possuiconta()
+    elif(pergunta == "N" or pergunta == "n"):
+        criacaodeconta()
+    else:
+        print("possibilidade não valida favor reiniciar o programa")
+
+#funcao para entrada de usuarios ja cadastrados
+def possuiconta():
+    print("=== Controle de Acesso ===")
+    Person.nomedeusuario = input("login: ")
+    Person.senha = input("senha: ")
+    validade = 0
+    validade = validacao(Person.nomedeusuario, Person.senha)
+    if validade == 1:
+        print("seja bem vindo {}".format(Person.nomedeusuario))
+        horario_atual = datetime.now()
+        print("Estamaos em {} ".format(horario_atual))
+    else:
+        print("usuario nao reconhecido favor reiniciar o sistema")
+
+#funcao para criacao de conta de novo usuarios
+def criacaodeconta():
+    print("=== Criação de usuario ===")
+    Person.nomedeusuario = input("informe o id de login desejado: ")
+    Person.senha = input("crie uma senha: ")
+    novousuario(Person.nomedeusuario, Person.senha)
 
 # funcao para a insercao dos dados de um novo usuario no banco de dados
 def novousuario(nomedeusuario, senha):
@@ -22,25 +53,12 @@ def validacao(nomedeusuario, senha):
     else:
         return 2
 
-# inicializacao do programaca perguntando se o usuario possui conta
-pergunta = input("voce possui conta ? [S-N]: ")
+#################################################################################
 
-if(pergunta == "S" or pergunta == "s"):
-    print("=== Controle de Acesso ===")
-    Person.nomedeusuario = input("login: ")
-    Person.senha = input("senha: ")
-    validade = 0
-    validade = validacao(Person.nomedeusuario, Person.senha)
-    if validade == 1:
-        print("seja bem vindo {}".format(Person.nomedeusuario))
+while(1):
+    pergunta = input("voce possui conta ?\nS - sim\nN - Não\nE - exit\n")
+    if(pergunta == "E" or pergunta == "e"):
+        break
     else:
-        print("usuario nao reconhecido favor reiniciar o sistema")
+        inicializacao(pergunta)
 
-elif(pergunta == "N" or pergunta == "n"):
-    print("=== Criação de usuario ===")
-    Person.nomedeusuario = input("informe o id de login desejado: ")
-    Person.senha = input("crie uma senha: ")
-    novousuario(Person.nomedeusuario, Person.senha)
-
-else:
-    print("possibilidade não valida favor reiniciar o programa")
