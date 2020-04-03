@@ -20,16 +20,34 @@ def possuiconta():
     if validade == 1:
         print("seja bem vindo {}".format(Person.nomedeusuario))
         horario_atual = datetime.now()
-        print("Estamaos em {} ".format(horario_atual))
+        print("Estamaos em {}\n".format(horario_atual))
     else:
-        print("usuario nao reconhecido favor reiniciar o sistema")
+        print("usuario nao reconhecido favor tente novamente\n")
+        possuiconta()
 
 #funcao para criacao de conta de novo usuarios
 def criacaodeconta():
-    print("=== Criação de usuario ===")
+    #print("=== Criação de usuario ===")
     Person.nomedeusuario = input("informe o id de login desejado: ")
-    Person.senha = input("crie uma senha: ")
-    novousuario(Person.nomedeusuario, Person.senha)
+    vdelogin = verificarlogin(Person.nomedeusuario)
+    print("{}".format(vdelogin))
+    if(vdelogin == 1):
+        print("nome de usuario ja existente, favor colocar outro id")
+        criacaodeconta()
+    else:
+        Person.senha = input("crie uma senha: ")
+        novousuario(Person.nomedeusuario, Person.senha)
+
+# funcao criada para avaliar se o nome de usuario ja esta sendo usado
+def verificarlogin(nomedeusuario):
+    arquivo = open("bancodedados.txt", "r")
+    for linha in arquivo:
+        if((nomedeusuario + "\n") == linha):
+            arquivo.close()
+            return 1
+        else:
+            arquivo.close()
+            return 2
 
 # funcao para a insercao dos dados de um novo usuario no banco de dados
 def novousuario(nomedeusuario, senha):
