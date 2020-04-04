@@ -15,9 +15,8 @@ def possuiconta():
     print("=== Controle de Acesso ===")
     Person.nomedeusuario = input("login: ")
     Person.senha = input("senha: ")
-    validade = 0
     validade = validacao(Person.nomedeusuario, Person.senha)
-    if validade == 1:
+    if (validade == 1):
         print("seja bem vindo {}".format(Person.nomedeusuario))
         horario_atual = datetime.now()
         print("Estamaos em {}\n".format(horario_atual))
@@ -27,10 +26,9 @@ def possuiconta():
 
 #funcao para criacao de conta de novo usuarios
 def criacaodeconta():
-    #print("=== Criação de usuario ===")
+    print("=== Criação de usuario ===")
     Person.nomedeusuario = input("informe o id de login desejado: ")
     vdelogin = verificarlogin(Person.nomedeusuario)
-    print("{}".format(vdelogin))
     if(vdelogin == 1):
         print("nome de usuario ja existente, favor colocar outro id")
         criacaodeconta()
