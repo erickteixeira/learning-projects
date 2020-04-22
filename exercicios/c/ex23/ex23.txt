@@ -1,0 +1,11 @@
+programa com 10 questoes sobre linguagem c 5 altenativas cada
+-------------------------------------------------------------------------------------------------------------------------------------------
+*as questoes, as altenativas e as respostas correta deve ser lida de um arquivo "bancodedados.txt" fopen(),fclose();
+*o programa deve marcar o tempo total e por questao time()
+*saida: estatistica e acertos
+-------------------------------------------------------------------------------------------------------------------------------------------
+*mkdir ex23; 
+*cd ex23; 
+*git init; 
+*fazer o AUTHORS, README, LICENSE, EX23, BANCO DE DADOS (por enquanto so comitar)
+*fazer o programa

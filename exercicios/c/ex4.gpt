@@ -1,0 +1,59 @@
+/* ************************************************************************ *
+*    ex4.gpt, V0.1.170904.1229                                             *
+*    Progama para calcular a media e tambem analisar o numero de faltas    *
+*                                                                          *
+*    Copyright (C) 2017 by Erick Antunes Teixeira                          *
+*                                                                          *
+*    This program is free software; you can redistribute it and/or modify  *
+*    it under the terms of the GNU General Public License as published by  *
+*    the Free Software Foundation; either version 2 of the License, or     *
+*    (at your option) any later version.                                   *
+*                                                                          *
+*    This program is distributed in the hope that it will be useful,       *
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+*    GNU General Public License for more details.                          *
+*                                                                          *
+*    You should have received a copy of the GNU General Public License     *
+*    along with this program; if not, write to the                         *
+*    Free Software Foundation, Inc.,                                       *
+*    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+*                                                                          *
+*    To contact the author, please write to:                               *
+*    Erick Antunes Teixeira <erickantunest@gmail.com>                      *
+*    Webpage: www.upe.br                                                   *
+*    Phone: +55 (98) 98190-4079                                            *
+* ************************************************************************ *
+* 
+*/
+algoritmo media;
+
+variáveis
+    f, n1, n2, n3, m, mf : real;
+fim-variáveis
+
+início
+    imprima("Informe o numero de faltas: ");
+    f := leia();
+    se f<=18 então
+        imprima("Informe a primeira nota: ");
+        n1 := leia();
+        imprima("Informe a segunda nota: ");
+        n2 := leia();
+        m:=(n1 + n2)/2.0;
+        se m>=7 então 
+            imprima("Parabens voce passou direto");
+        senão
+            imprima("Informe a nota final: ");
+            n3 := leia();
+            mf:=m + n3;
+        fim-se
+        se mf<10 então
+            imprima("Reprovado na final");
+        senão
+            imprima("Aprovado na final");
+        fim-se
+    senão
+        imprima("Reprovado por falta");
+    fim-se
+fim
