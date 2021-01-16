@@ -52,7 +52,7 @@
 #if DEBUG==0
 #define NDEBUG
 #endif
-/* #include <assert.h> */ /* Verify assumptions with assert. Turn off with #define NDEBUG */ 
+/* #include <assert.h> */ /* Verify assumptions with assert. Turn off with #define NDEBUG */
 
 /* Debug message if DEBUG on */
 #define IFDEBUG(M) if(DEBUG) fprintf(stderr, "[DEBUG file:%s line:%d]: " M "\n", __FILE__, __LINE__); else {;}
@@ -68,8 +68,8 @@ void copyr(void); /* print version and copyright information */
 
 /* ---------------------------------------------------------------------- */
 /* This function does ...
- * 
- * It receives as input ... 
+ *
+ * It receives as input ...
  *
  * It returns ...
  */
@@ -95,7 +95,7 @@ int main(void)
             {
                 resp= s[2];
                 do{
-                
+
                     scanf("%c",sr);
                 }while(sr != '\n');
 
@@ -107,10 +107,10 @@ int main(void)
             else
                 printf("%s", s);
 
-       }
+    }
 
     fclose(arq);
-     
+
     printf("Resposta : %c\n'",resp);
     //help();
     //copyr();
@@ -122,7 +122,7 @@ int main(void)
 /* add more functions here */
 
 /* ---------------------------------------------------------------------- */
-/* Prints help information 
+/* Prints help information
  *  usually called by opt -h or --help
  */
 void help(void)
@@ -139,7 +139,7 @@ void help(void)
 }
 
 /* ---------------------------------------------------------------------- */
-/* Prints version and copyright information 
+/* Prints version and copyright information
  *  usually called by opt -V
  */
 void copyr(void)
